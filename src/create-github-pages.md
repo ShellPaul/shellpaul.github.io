@@ -19,6 +19,7 @@ Step 2. 添加 html
 Step 3. 测试
 ------------
 在项目文件夹下启动个简单的文件服务器用于测试
+
 - python 3 ```python -m http.server```
 - python 2 ```python -m SimpleHTTPServer```
 
