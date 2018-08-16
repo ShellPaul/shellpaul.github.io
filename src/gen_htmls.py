@@ -1,45 +1,3 @@
-创建 Github Pages
-=================
-
-我会告诉你我的目标就是添加个背景音乐吗？
-
-<audio controls autoplay preload="metadata" style=" width:300px;">
-	<source src="http://other.web.ri01.sycdn.kuwo.cn/resource/n1/7/87/3851412328.mp3" type="audio/mpeg">
-	Your browser does not support the audio element.
-</audio>
-
-Step 1. 创建仓库
-----------------
-仓库名称必须是 <your-github-username>.github.io
-
-Step 2. 添加 html
------------------
-可以尝试在仓库中创建 index.html，填入喜欢的内容
-
-Step 3. 测试
-------------
-在项目文件夹下启动个简单的文件服务器用于测试
-- python 3 ```python -m http.server```
-- python 2 ```python -m SimpleHTTPServer```
-
-访问 [http://127.0.0.1:8000](http://127.0.0.1:8000)
-
-Step 4. 上线
-------------
-用 git 提交到仓库  
-最多等 15 分钟就可以访问了 <your-github-username>.github.io
-
-Step 5. Markdown
-----------------
-我们还是喜欢用 markdown
-
-先安装 python 的 markdown 转 html 工具  
-```
-pip install markdown jinja2
-```
-创建 src 目录，添加一个 markdown 文件  
-src 下再创建一个 python 文件 gen_html.py  
-```
 # -*- coding: utf-8 -*-
 
 import os
@@ -109,16 +67,3 @@ def gen_all():
 
 if __name__ == '__main__':
     gen_all()
-```
-
-运行即可把 markdown 文件转换成 html
-
-使用框架
--------
-很多人已经开发好了框架等你来用  
-[有哪些github pages开源项目可以用来建博客？](https://www.zhihu.com/question/21169368)  
-
-
-更多
-----
-[GitHub Pages Basics](https://help.github.com/categories/github-pages-basics/)
