@@ -13,7 +13,7 @@ TEMPLATE = r"""<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
-    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css" rel="stylesheet">
     <style>
         body {
             font-family: sans-serif;
