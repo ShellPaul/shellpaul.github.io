@@ -10,7 +10,7 @@
 
 Step 1. 创建仓库
 ----------------
-仓库名称必须是 <your-github-username>.github.io
+仓库名称必须是 ```<your-github-username>.github.io```
 
 Step 2. 添加 html
 -----------------
@@ -27,7 +27,7 @@ Step 3. 测试
 Step 4. 上线
 ------------
 用 git 提交到仓库  
-最多等 15 分钟就可以访问了 <your-github-username>.github.io
+最多等 15 分钟就可以访问了 ```<your-github-username>.github.io```
 
 Step 5. Markdown
 ----------------
