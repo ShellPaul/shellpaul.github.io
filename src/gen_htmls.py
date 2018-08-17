@@ -49,6 +49,10 @@ def gen_one(filepath):
             md = f.read().decode("utf-8", "ignore")
         extensions = ['extra', 'smarty']
         html = markdown.markdown(md, extensions=extensions, output_format='html5')
+        filename = filepath.split("/")[-1][:-3]
+        mid_filepath = os.path.join(html_dir, "mid_dir", filename + ".html")
+        with open(mid_filepath, "w+", encoding="utf-8") as f:
+            f.write(html)
         doc = jinja2.Template(TEMPLATE).render(content=html)
         return doc
     except:
