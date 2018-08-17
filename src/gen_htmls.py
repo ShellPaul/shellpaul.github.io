@@ -6,8 +6,10 @@ import traceback
 import jinja2
 import markdown
 
-md_dir = os.path.dirname(os.path.realpath(__file__))
-html_dir = os.path.dirname(md_dir)
+md_dir = os.path.dirname(os.path.realpath(__file__))    # here,i.e. ../src
+print("md_dir:{}".format(md_dir))
+html_dir = os.path.dirname(md_dir)    # here,i.e. ../shellpaul.github.io
+print("html_dir:{}".format(html_dir))
 
 TEMPLATE = r"""<!DOCTYPE html>
 <html>
@@ -41,11 +43,16 @@ TEMPLATE = r"""<!DOCTYPE html>
 
 
 def gen_one(filepath):
+    """A html5 doc is generated from the content of the filepath and then returned"""
     try:
         with open(filepath, "rb") as f:
             md = f.read().decode("utf-8", "ignore")
         extensions = ['extra', 'smarty']
         html = markdown.markdown(md, extensions=extensions, output_format='html5')
+        filename = filepath.split("/")[-1][:-3]
+        mid_filepath = os.path.join(html_dir, "mid_dir", filename + ".html")
+        with open(mid_filepath, "w+", encoding="utf-8") as f:
+            f.write(html)
         doc = jinja2.Template(TEMPLATE).render(content=html)
         return doc
     except:
@@ -53,17 +60,20 @@ def gen_one(filepath):
 
 
 def gen_all():
+    """for each .md file under md_dir, a html page will be generated and written to another file with the
+    same name and a .html postfix under html_dir. """
     for filename in os.listdir(md_dir):
         if not filename.endswith(".md"):
             print("Unknown file type: %s" % filename)
             continue
-        inpath = os.path.join(md_dir, filename)
-        content = gen_one(inpath)
+        inpath = os.path.join(md_dir, filename)    # i.e. src/create-github-pages.md
+        content = gen_one(inpath)    # content generated
+        print("src Marddown here: {}".format(inpath))
         if content:
             outpath = os.path.join(html_dir, filename[:-3] + ".html")
             with open(outpath, "wb") as f:
                 f.write(content.encode("utf-8", "ignore"))
-
+                print("New HTML here：{}".format(outpath)) 
 
 if __name__ == '__main__':
     gen_all()

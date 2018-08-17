@@ -10,7 +10,15 @@
 
 Step 1. 创建仓库
 ----------------
-仓库名称必须是 ```<your-github-username>.github.io```
+Github Pages分两种，一种是User&Oganization，另一种是Project
+
+如果是第1种，仓库名称必须是 ```<your-github-username>.github.io```，访问地址```<your-github-username>.github.io```
+(示例: [https://tianwei1992.github.io/](https://tianwei1992.github.io/) )
+
+如果是第2种，仓库名称任意，访问地址```<your-github-username>.github.io/<your-repo-name>```
+(示例: [https://tianwei1992.github.io/notice/](https://tianwei1992.github.io/notice/) )
+
+这个页面是第2种
 
 Step 2. 添加 html
 -----------------
